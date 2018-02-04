@@ -30,7 +30,7 @@ namespace BilletTest
             var bil = new Bil();
 
             //Act
-            string pris = bil.Køretøj();
+           
 
             //Assert
             Assert.AreEqual("Bil", bil.Køretøj());
@@ -56,7 +56,7 @@ namespace BilletTest
             var mc = new MC();
 
             //Act
-            string køretøj = mc.Køretøj();
+            
 
             //Assert
             Assert.AreEqual("MC", mc.Køretøj());
@@ -69,10 +69,10 @@ namespace BilletTest
             var billet = new Billet();
 
             //Act
-            double pris = billet.Pris;
+            
 
             //Assert
-            Assert.AreEqual(120, billet.Pris);
+            Assert.AreEqual(120, billet.PrisUdenRabat);
         }
 
         [TestMethod]
@@ -83,10 +83,37 @@ namespace BilletTest
             billet.brobizz = true;
 
             //Act
-            double pris = billet.Pris;
+            
 
             //Assert
-            Assert.AreNotEqual(120, billet.Pris);
+            Assert.AreEqual(114, billet.PrisMedKunBrobizzRabat);
+        }
+
+        [TestMethod]
+        public void BilletPrisWeekend()
+        {
+            //Arrange
+            var billet = new Billet();
+
+            //Act
+            
+
+            //Assert
+            Assert.AreEqual(96, billet.Pris);
+        }
+
+        [TestMethod]
+        public void BilletPrisMedBrobizzWeekend()
+        {
+            //Arrange
+            var billet = new Billet();
+            billet.brobizz = true;
+
+            //Act
+            
+
+            //Assert
+            Assert.AreEqual(91.2, billet.Pris);
         }
     }
 }
