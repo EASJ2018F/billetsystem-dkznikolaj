@@ -6,6 +6,7 @@ namespace BilletClassLibrary
     public class Bil
     {
         private DateTime _dato;
+
         private string _nummerplade;
 
         public DateTime Dato
@@ -14,10 +15,15 @@ namespace BilletClassLibrary
             set { _dato = value; }
         }
 
+        
         public string Nummerplade
         {
             get { return _nummerplade; }
-            set { _nummerplade = value; }
+            set
+            {
+                if (value.Length <= 7) _nummerplade = value; 
+                else throw new ArgumentException("Too many characters. Keep it 7 or below.");
+            }
         }
 
         public int Pris()

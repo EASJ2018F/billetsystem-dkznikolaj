@@ -56,10 +56,37 @@ namespace BilletTest
             var mc = new MC();
 
             //Act
-            string pris = mc.Køretøj();
+            string køretøj = mc.Køretøj();
 
             //Assert
             Assert.AreEqual("MC", mc.Køretøj());
+        }
+
+        [TestMethod]
+        public void BilletPris()
+        {
+            //Arrange
+            var billet = new Billet();
+
+            //Act
+            double pris = billet.Pris;
+
+            //Assert
+            Assert.AreEqual(120, billet.Pris);
+        }
+
+        [TestMethod]
+        public void BilletPrisMedBrobizz()
+        {
+            //Arrange
+            var billet = new Billet();
+            billet.brobizz = true;
+
+            //Act
+            double pris = billet.Pris;
+
+            //Assert
+            Assert.AreNotEqual(120, billet.Pris);
         }
     }
 }
