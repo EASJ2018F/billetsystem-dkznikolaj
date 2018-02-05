@@ -79,8 +79,7 @@ namespace BilletTest
         public void BilletPrisMedBrobizz()
         {
             //Arrange
-            var billet = new Billet();
-            billet.brobizz = true;
+            var billet = new Billet {Brobizz = true};
 
             //Act
             
@@ -106,8 +105,7 @@ namespace BilletTest
         public void BilletPrisMedBrobizzWeekend()
         {
             //Arrange
-            var billet = new Billet();
-            billet.brobizz = true;
+            var billet = new Billet {Brobizz = true};
 
             //Act
             

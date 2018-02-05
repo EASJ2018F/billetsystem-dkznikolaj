@@ -3,20 +3,20 @@ using System.Dynamic;
 
 namespace BilletClassLibrary
 {
-    public class Bil
+    public class Bil : Template
     {
         private DateTime _dato;
 
         private string _nummerplade;
 
-        public DateTime Dato
+        public new DateTime Dato
         {
             get { return _dato; }
             set { _dato = value; }
         }
 
         
-        public string Nummerplade
+        public new string Nummerplade
         {
             get { return _nummerplade; }
             set
@@ -26,12 +26,12 @@ namespace BilletClassLibrary
             }
         }
 
-        public int Pris()
+        public override int Pris()
         {
            return 240;
         }
 
-        public string Køretøj()
+        public override string Køretøj()
         {
             return "Bil";
         }

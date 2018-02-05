@@ -7,12 +7,12 @@ namespace BilletClassLibrary
 {
     public class Billet
     {
-        public bool brobizz;
+        public bool Brobizz;
         private DayOfWeek _dato;
         private double _pris = 120;
         private double rabatBrobizz = 0.95;
         private double rabatWeekend = 0.80;
-
+        
         public DayOfWeek Dato
         {
             get { return DayOfWeek.Sunday; }
@@ -22,7 +22,7 @@ namespace BilletClassLibrary
         public double Pris
         {
             get {
-                if (brobizz == true && (Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday)) return _pris *= rabatWeekend *= rabatBrobizz;
+                if (Brobizz == true && (Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday)) return _pris *= rabatWeekend *= rabatBrobizz;
                 else if (Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday) return _pris *= rabatWeekend;
                 
                 return _pris; 
@@ -40,7 +40,7 @@ namespace BilletClassLibrary
         {
             get
             {
-                if (brobizz == true) return _pris *= rabatBrobizz;
+                if (Brobizz == true) return _pris *= rabatBrobizz;
                 return _pris;
             }
             set { _pris = value; }
